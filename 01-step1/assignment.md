@@ -6,11 +6,12 @@ title: Enable ACM
 notes:
 - type: text
   contents: |-
-    In this learning module, we covered how to easily create the following types of Operators with the Operator SDK:
+    In this learning module, we cover enabling ACM and the following Concepts:
 
-    * Scale horizontally.
-    * Survive disk, machine, rack, and even datacenter failures with minimal latency disruption and no manual intervention.
-    * Supports strongly-consistent ACID transactions and provides a familiar SQL API for structuring, manipulating, and querying data.
+    * Create the required Namespace.
+    * Install the ACM Operator.
+    * Provision the Custom Resource.
+    * Access the ACM console.
 
     Let's begin!
 tabs:
@@ -26,7 +27,7 @@ tabs:
   url: https://console-openshift-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
 difficulty: basic
-timelimit: 200
+timelimit: 800
 ---
 Let's begin by connecting to OpenShift:
 
@@ -58,8 +59,33 @@ Then create the Subscription:
 oc create -f https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/01-step1/content/acm-operator-subscription.yaml
 ```
 
+Wait until the Subscription is Installed:
+
+```
+oc get csv
+```
+
+The Phase should change from "Installing" to Succeeded"
+
+
 Finally enable the Custom Resource:
 
 ```
 oc create -f https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/01-step1/content/custom-resource.yaml
+```
+
+Check for the status of the Operator Installation (Can take up to 10min):
+
+```
+echo $(oc get mch -o=jsonpath='{.items[0].status.phase}')
+````
+
+The Status should change from "Installing" to Runnng"
+
+Get the Route for the ACM Service and Navigate to this:
+
+Login with admin/admin
+
+```
+echo https://$(oc get route | awk '{print $2}' | grep -v HOST)
 ```
