@@ -2,7 +2,7 @@
 slug: step7
 id: nwiwfb4vydao
 type: challenge
-title: Update the CockroachDB Custom Resource
+title: Ansible Tower Integration
 tabs:
 - title: Terminal 1
   type: terminal
@@ -18,16 +18,8 @@ tabs:
 difficulty: basic
 timelimit: 200
 ---
-Let's now update the CockroachDB `example` Custom Resource and increase the desired number of replicas to `3`:
+Connect to OpenShift again:
 
 ```
-oc patch cockroachdb cockroachdb-sample --type='json' -p '[{"op": "replace", "path": "/spec/statefulset/replicas", "value":3}]'
+oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
 ```
-
-Verify that the CockroachDB Stateful Set is creating two additional pods:
-
-```
-oc get pods -l app.kubernetes.io/component=cockroachdb
-```
-
-The CockroachDB UI should now reflect these additional nodes as well.

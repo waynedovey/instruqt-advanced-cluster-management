@@ -2,7 +2,7 @@
 slug: step2
 id: y5cdbjsri1tz
 type: challenge
-title: Update the Watches File
+title: Create an Appplication
 tabs:
 - title: Terminal 1
   type: terminal
@@ -16,11 +16,11 @@ tabs:
   url: https://console-openshift-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
 difficulty: basic
-timelimit: 200
+timelimit: 800
 ---
-The `watches.yaml` file maps a Group, Version, and Kind to a specific Helm Chart. Observe the contents of the `watches.yaml`:
+Connect to OpenShift again:
 
 ```
-cd /root/projects/cockroachdb-operator/ && \
-  cat watches.yaml
+oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
 ```
+

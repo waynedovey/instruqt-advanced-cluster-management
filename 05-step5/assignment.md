@@ -2,7 +2,7 @@
 slug: step5
 id: anzzxofyr3xi
 type: challenge
-title: Access the CockroachDB Web UI
+title: Governance-Risk-Compliance
 tabs:
 - title: Terminal 1
   type: terminal
@@ -18,16 +18,8 @@ tabs:
 difficulty: basic
 timelimit: 200
 ---
-Verify that you can access the CockroachDB Web UI by first exposing the CockroachDB Service as a publicly accessible OpenShift Route:
+Connect to OpenShift again:
 
 ```
-COCKROACHDB_PUBLIC_SERVICE=`oc get svc -o jsonpath={$.items[1].metadata.name}`
-oc expose --port=http svc $COCKROACHDB_PUBLIC_SERVICE
-```
-
-Fetch the OpenShift Route URL and copy/paste it into your browser:
-
-```
-COCKROACHDB_UI_URL=`oc get route -o jsonpath={$.items[0].spec.host}`
-echo $COCKROACHDB_UI_URL
+oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
 ```
