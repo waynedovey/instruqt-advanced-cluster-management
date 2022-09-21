@@ -2,7 +2,7 @@
 slug: step2
 id: y5cdbjsri1tz
 type: challenge
-title: Create an Appplication
+title: Cluster Management
 tabs:
 - title: Terminal 1
   type: terminal

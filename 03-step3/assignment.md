@@ -2,7 +2,7 @@
 slug: step3
 id: dy7ocj2eyokq
 type: challenge
-title: Apply the CockroachDB Custom Resource Definition
+title: Observability
 tabs:
 - title: Terminal 1
   type: terminal
@@ -22,6 +22,4 @@ Connect to OpenShift again:
 
 ```
 oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
-```
-
 ```
