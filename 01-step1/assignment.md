@@ -61,5 +61,5 @@ oc create -f https://raw.githubusercontent.com/waynedovey/instruqt-advanced-clus
 Finally enable the Custom Resource:
 
 ```
-oc create -f https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/01-step1/content/acm-operator-subscription.yaml
+oc create -f https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/01-step1/content/custom-resource.yaml
 ```
