@@ -1,0 +1,15 @@
+slug: advanced-cluster-management
+id: xz3gw71yucky
+title: Advanced Cluster Management
+teaser: An introduction to Advanced Cluster Management for Kubernetes
+description: |-
+  Learn the basics of kubernetes cluster management.
+  ACM seeks to simplify the management of Kubernetes, start with the UI, while learning the cli.
+icon: https://logodix.com/logo/1910931.png
+tags: []
+owner: openshift
+developers:
+- wdovey@redhat.com
+private: true
+published: false
+checksum: "1088926675378219718"
