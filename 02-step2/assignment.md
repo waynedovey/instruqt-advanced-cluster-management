@@ -1,22 +1,36 @@
 ---
 slug: step2
-id: y5cdbjsri1tz
+id: lcecwclx1ku7
 type: challenge
 title: Cluster Management
 tabs:
-- title: Terminal 1
+- title: Work Terminal 1
   type: terminal
   hostname: container
+- title: Hub Terminal 1
+  type: terminal
+  hostname: crc
+- title: Spoke Terminal 3
+  type: terminal
+  hostname: spoke
 - title: Visual Editor
   type: code
   hostname: container
   path: /root
-- title: Web Console
+- title: ACM Hub Console
+  type: website
+  url: https://multicloud-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
+  new_window: true
+- title: Hub Web Console
   type: website
   url: https://console-openshift-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
+- title: Spoke Web Console
+  type: website
+  url: https://console-openshift-console.apps.spoke.${_SANDBOX_ID}.instruqt.io
+  new_window: true
 difficulty: basic
-timelimit: 800
+timelimit: 8000
 ---
 Connect to OpenShift again:
 

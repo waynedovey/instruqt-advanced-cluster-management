@@ -1,6 +1,6 @@
 ---
 slug: step1
-id: odx020nssccy
+id: vu7uf9gyjdoo
 type: challenge
 title: Enable ACM
 notes:
@@ -15,19 +15,29 @@ notes:
 
     Let's begin!
 tabs:
-- title: Terminal 1
+- title: Work Terminal 1
   type: terminal
   hostname: container
+- title: Hub Terminal 2
+  type: terminal
+  hostname: crc
+- title: Spoke Terminal 3
+  type: terminal
+  hostname: spoke
 - title: Visual Editor
   type: code
   hostname: container
   path: /root
-- title: Web Console
+- title: Hub Web Console
   type: website
   url: https://console-openshift-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
+- title: Spoke Web Console
+  type: website
+  url: https://console-openshift-console.apps.spoke.${_SANDBOX_ID}.instruqt.io
+  new_window: true
 difficulty: basic
-timelimit: 800
+timelimit: 8000
 ---
 Let's begin by connecting to OpenShift:
 
@@ -62,10 +72,15 @@ oc create -f https://raw.githubusercontent.com/waynedovey/instruqt-advanced-clus
 Wait until the Subscription is Installed:
 
 ```
+while sleep 10;
+do
 oc get csv
+done
 ```
 
 The Phase should change from "Installing" to Succeeded"
+
+Press "Control+C" to Break Loop
 
 
 Finally enable the Custom Resource:
@@ -77,10 +92,15 @@ oc create -f https://raw.githubusercontent.com/waynedovey/instruqt-advanced-clus
 Check for the status of the Operator Installation (Can take up to 10min):
 
 ```
+while sleep 10;
+do
 echo $(oc get mch -o=jsonpath='{.items[0].status.phase}')
+done
 ````
 
 The Status should change from "Installing" to Runnng"
+
+Press "Control+C" to Break Loop
 
 Get the Route for the ACM Service and Navigate to this:
 
@@ -89,3 +109,5 @@ Login with admin/admin
 ```
 echo https://$(oc get route | awk '{print $2}' | grep -v HOST)
 ```
+
+Completed, move onto the next assignment.

@@ -1,6 +1,6 @@
 ---
 slug: step4
-id: n4m4dultsoxr
+id: bojjn4atiixc
 type: challenge
 title: Application Lifecycle
 tabs:
@@ -13,7 +13,7 @@ tabs:
   path: /root
 - title: Web Console
   type: website
-  url: https://console-openshift-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
+  url: https://console-openshift-console.apps.spoke.${_SANDBOX_ID}.instruqt.io
   new_window: true
 difficulty: basic
 timelimit: 200
