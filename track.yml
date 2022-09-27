@@ -1,5 +1,5 @@
 slug: rh-advanced-cluster-management-2
-id: ccyjsbnrx6e8
+id: egk9swk0ajfy
 title: Red Hat Advanced Cluster Management
 teaser: An introduction to Red Hat Advanced Cluster Management for Kubernetes
 description: |-
@@ -12,4 +12,4 @@ developers:
 - wdovey@redhat.com
 private: true
 published: false
-checksum: "8852846641537285967"
+checksum: "12529858295912142778"

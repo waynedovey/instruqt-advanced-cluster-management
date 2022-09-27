@@ -1,6 +1,6 @@
 ---
 slug: step2
-id: 6ohj3gcpommn
+id: ke9ivfcglspb
 type: challenge
 title: Cluster Management
 tabs:
@@ -38,3 +38,13 @@ Connect to OpenShift again:
 oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
 ```
 
+Generate Import Manifest
+
+```
+cm ?
+```
+
+Login into Spoke Cluster
+```
+oc login --token=superSecur3T0ken --server=http://spoke:8001
+```
