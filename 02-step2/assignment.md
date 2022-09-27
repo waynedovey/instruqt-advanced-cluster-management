@@ -101,6 +101,11 @@ kubectl apply -f /root/${CLUSTER_NAME}-import.yaml
 Start the Import for spoke2 Cluster
 
 ```
+oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
+```
+
+
+```
 export CLUSTER_NAME=spoke2
 ```
 
@@ -170,6 +175,10 @@ kubectl apply -f /root/${CLUSTER_NAME}-import.yaml
 ```
 
 Validate both Clusters are imported
+
+```
+oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
+```
 
 ```
 cm get clusters
