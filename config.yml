@@ -12,8 +12,8 @@ virtualmachines:
   - https
   - high-ports
 - name: spoke
-  image: megatron-198805/openshift-sno-v5
-  #image: megatron-198805/openshift-sno-v4
+  #image: megatron-198805/openshift-sno-v5
+  image: megatron-198805/openshift-sno-v4
   #image: megatron-198805/openshift-sno02-v1
   #image: centos-cloud/centos-stream-8
   machine_type: n1-standard-16

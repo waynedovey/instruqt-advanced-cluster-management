@@ -1,6 +1,6 @@
 ---
 slug: step3
-id: igwwbuoxjbfi
+id: 2yjyksp2gkm7
 type: challenge
 title: Observability
 tabs:

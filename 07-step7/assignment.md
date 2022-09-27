@@ -1,6 +1,6 @@
 ---
 slug: step7
-id: dbnqhecwv052
+id: gcoquaj9xxed
 type: challenge
 title: Ansible Tower Integration
 tabs:

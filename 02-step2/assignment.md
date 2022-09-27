@@ -1,6 +1,6 @@
 ---
 slug: step2
-id: lcecwclx1ku7
+id: 6ohj3gcpommn
 type: challenge
 title: Cluster Management
 tabs:

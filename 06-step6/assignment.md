@@ -1,6 +1,6 @@
 ---
 slug: step6
-id: 1xfp2eyrptce
+id: 5kpfxauekhmy
 type: challenge
 title: Advanced Policy Management
 tabs:
