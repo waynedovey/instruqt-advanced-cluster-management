@@ -15,3 +15,18 @@ done
 # Enable bash completion for kubectl
 echo "source /usr/share/bash-completion/bash_completion" >> /root/.bashrc
 echo "complete -F __start_kubectl k" >> /root/.bashrc
+
+# Sort out DNS
+crc=`nslookup crc |  awk -F': ' 'NR==6 { print $2 } '`
+
+echo "$crc api.crc.testing" >> /etc/hosts
+echo "$crc oauth-openshift.apps-crc.testing" >> /etc/hosts
+
+cat << EOF > /etc/resolv.conf
+nameserver $crc
+nameserver 10.64.1.254
+nameserver 169.254.169.254
+search jhyalbml24r4.svc.cluster.local c.instruqt-prod.internal google.internal
+EOF
+
+nslookup api.crc.testing

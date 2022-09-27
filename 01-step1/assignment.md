@@ -110,7 +110,7 @@ oc create -f https://raw.githubusercontent.com/waynedovey/instruqt-advanced-clus
 Check for the status of the Operator Installation (Can take up to 10min):
 
 ```
-while sleep 10;
+while sleep 300;
 do
 echo $(oc get mch -o=jsonpath='{.items[0].status.phase}')
 done
