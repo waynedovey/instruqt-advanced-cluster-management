@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Sort out DNS
+crc=`nslookup crc |  awk -F': ' 'NR==6 { print $2 } '`
+
 systemctl stop systemd-resolved
 systemctl disable systemd-resolved
 systemctl mask systemd-resolved
-
-crc=`nslookup crc |  awk -F': ' 'NR==6 { print $2 } '`
 
 echo "$crc api.crc.testing" >> /etc/hosts
 echo "$crc oauth-openshift.apps-crc.testing" >> /etc/hosts

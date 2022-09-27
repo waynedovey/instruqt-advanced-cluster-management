@@ -2,7 +2,7 @@
 slug: step5
 id: xpu5stv6xqru
 type: challenge
-title: Governance-Risk-Compliance
+title: Advanced Policy Management
 tabs:
 - title: Terminal 1
   type: terminal

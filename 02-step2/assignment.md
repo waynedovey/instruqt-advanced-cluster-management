@@ -184,3 +184,4 @@ oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-veri
 cm get clusters
 ```
 
+Completed, move onto the next assignment.

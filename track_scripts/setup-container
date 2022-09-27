@@ -3,7 +3,7 @@
 
 #dnf install -y procps-ng iputils bind-utils tree make automake gcc gcc-c++
 
-dnf install -y procps-ng iputils bind-utils ansible
+dnf install -y procps-ng iputils bind-utils ansible git 
 
 crc=`nslookup crc |  awk -F': ' 'NR==6 { print $2 } '`
 #spoke=`nslookup spoke |  awk -F': ' 'NR==6 { print $2 } '`

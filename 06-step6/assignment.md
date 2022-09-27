@@ -2,7 +2,7 @@
 slug: step6
 id: opjaxx3usjcw
 type: challenge
-title: Advanced Policy Management
+title: Ansible Tower Integration
 tabs:
 - title: Terminal 1
   type: terminal
