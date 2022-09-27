@@ -82,6 +82,24 @@ The Phase should change from "Installing" to Succeeded"
 
 Press "Control+C" to Break Loop
 
+Get the Pull Secret 
+```
+curl -s https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/01-step1/content/pull-secret.txt -o /root/pull-secret.txt
+```
+
+Decrypt the Pull secret with Ansible Vault (**Password Supplied by Red Hat Admin**)
+```
+ansible-vault decrypt /root/pull-secret.txt
+```
+
+Create the Password for ACM
+
+```
+oc create secret generic pull-secret \
+--from-file=.dockerconfigjson=/root/pull-secret.txt \
+--type=kubernetes.io/dockerconfigjson
+```
+
 
 Finally enable the Custom Resource:
 
