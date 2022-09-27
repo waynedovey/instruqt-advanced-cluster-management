@@ -82,7 +82,7 @@ The Phase should change from "Installing" to Succeeded"
 
 Press "Control+C" to Break Loop
 
-Get the Pull Secret 
+Get the Pull Secret
 ```
 curl -s https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/01-step1/content/pull-secret.txt -o /root/pull-secret.txt
 ```
