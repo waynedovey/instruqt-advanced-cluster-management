@@ -11,19 +11,15 @@ virtualmachines:
   - http
   - https
   - high-ports
-# - name: spoke
-#   #image: megatron-198805/openshift-sno-v5
-#   image: megatron-198805/openshift-sno-v4
-#   #image: megatron-198805/openshift-sno02-v1
-#   #image: centos-cloud/centos-stream-8
-#   machine_type: n1-standard-16
-#   allow_external_ingress:
-#   - http
-#   - https
-#   - high-ports
-- name: spoke
+- name: spoke1
   image: instruqt/k3s-v1-25-0
   shell: /bin/bash
   environment:
     K3S_TOKEN: superSecur3T0ken
-  machine_type: n1-standard-1  
+  machine_type: n1-standard-1
+- name: spoke2
+  image: instruqt/k3s-v1-25-0
+  shell: /bin/bash
+  environment:
+    K3S_TOKEN: superSecur3T0ken
+  machine_type: n1-standard-1    

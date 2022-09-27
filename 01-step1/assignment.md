@@ -18,12 +18,6 @@ tabs:
 - title: Work Terminal 1
   type: terminal
   hostname: container
-- title: Hub Terminal 2
-  type: terminal
-  hostname: crc
-- title: Spoke Terminal 3
-  type: terminal
-  hostname: spoke
 - title: Visual Editor
   type: code
   hostname: container
@@ -32,11 +26,7 @@ tabs:
   type: website
   url: https://console-openshift-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
-- title: Spoke Web Console
-  type: website
-  url: https://console-openshift-console.apps.spoke.${_SANDBOX_ID}.instruqt.io
-  new_window: true
-difficulty: basic
+difficulty: advanced
 timelimit: 8000
 ---
 Let's begin by connecting to OpenShift:

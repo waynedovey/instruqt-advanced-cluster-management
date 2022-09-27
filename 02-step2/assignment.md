@@ -7,12 +7,6 @@ tabs:
 - title: Work Terminal 1
   type: terminal
   hostname: container
-- title: Hub Terminal 1
-  type: terminal
-  hostname: crc
-- title: Spoke Terminal 3
-  type: terminal
-  hostname: spoke
 - title: Visual Editor
   type: code
   hostname: container
@@ -25,11 +19,7 @@ tabs:
   type: website
   url: https://console-openshift-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
-- title: Spoke Web Console
-  type: website
-  url: https://console-openshift-console.apps.spoke.${_SANDBOX_ID}.instruqt.io
-  new_window: true
-difficulty: basic
+difficulty: advanced
 timelimit: 8000
 ---
 Connect to OpenShift again:
@@ -38,7 +28,7 @@ Connect to OpenShift again:
 oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
 ```
 
-Start the Import for spoke-1 Cluster
+Start the Import for spoke1 Cluster
 ```
 export CLUSTER_NAME=spoke1
 ```
@@ -108,7 +98,7 @@ kubectl apply -f /root/${CLUSTER_NAME}-klusterlet-crd.yaml
 kubectl apply -f /root/${CLUSTER_NAME}-import.yaml
 ```
 
-Start the Import for spoke-2 Cluster
+Start the Import for spoke2 Cluster
 
 ```
 export CLUSTER_NAME=spoke2
@@ -179,7 +169,7 @@ kubectl apply -f /root/${CLUSTER_NAME}-klusterlet-crd.yaml
 kubectl apply -f /root/${CLUSTER_NAME}-import.yaml
 ```
 
-Validate both Clusters are imported 
+Validate both Clusters are imported
 
 ```
 cm get clusters
