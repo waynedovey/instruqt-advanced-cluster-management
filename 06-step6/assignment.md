@@ -1,6 +1,6 @@
 ---
 slug: step6
-id: opjaxx3usjcw
+id: v2juyihs5qbn
 type: challenge
 title: Ansible Tower Integration
 tabs:

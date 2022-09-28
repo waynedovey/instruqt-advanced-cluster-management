@@ -1,8 +1,8 @@
 ---
 slug: step4
-id: cbuxjmuktww7
+id: kiyiwsdbpyod
 type: challenge
-title: Governance Risk and Compliance
+title: Governance, Risk and Compliance
 tabs:
 - title: Terminal 1
   type: terminal
@@ -11,12 +11,16 @@ tabs:
   type: code
   hostname: container
   path: /root
-- title: Web Console
+- title: ACM Hub Console
   type: website
-  url: https://console-openshift-console.apps.spoke.${_SANDBOX_ID}.instruqt.io
+  url: https://multicloud-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
-difficulty: basic
-timelimit: 200
+- title: Hub OCP Console
+  type: website
+  url: https://console-openshift-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
+  new_window: true
+difficulty: advanced
+timelimit: 600
 ---
 Connect to OpenShift again:
 

@@ -1,6 +1,6 @@
 ---
 slug: step1
-id: c7sxyfjisane
+id: fzhnqixxlhiy
 type: challenge
 title: Enable ACM
 notes:
@@ -77,7 +77,7 @@ Get the Pull Secret
 curl -s https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/01-step1/content/pull-secret.txt -o /root/pull-secret.txt
 ```
 
-Decrypt the Pull secret with Ansible Vault (**Password Supplied by Red Hat Admin**)
+Decrypt the Pull secret with Ansible Vault (***Password Supplied by Red Hat Admin***)
 ```
 ansible-vault decrypt /root/pull-secret.txt
 ```
