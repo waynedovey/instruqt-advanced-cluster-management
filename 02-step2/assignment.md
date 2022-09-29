@@ -22,7 +22,7 @@ tabs:
 difficulty: advanced
 timelimit: 8000
 ---
-Connect to OpenShift again:
+Connect to ACM Hub:
 
 ```
 oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true

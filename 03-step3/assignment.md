@@ -34,20 +34,20 @@ tabs:
 difficulty: advanced
 timelimit: 600
 ---
-Connect to OpenShift again:
+Connect to ACM Hub:
 
 ```
 oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
 ```
 
-Label the Clusters to ensure Application placement rules
+Label the Clusters as "prod" to ensure Application placement rules
 
 ```
 export CLUSTER_NAME=spoke1
 ```
 
 ```
-oc label managedclusters ${CLUSTER_NAME} "environment=dev" --overwrite
+oc label managedclusters ${CLUSTER_NAME} "environment=prod" --overwrite
 ```
 
 ```
@@ -55,7 +55,7 @@ export CLUSTER_NAME=spoke2
 ```
 
 ```
-oc label managedclusters ${CLUSTER_NAME} "environment=dev" --overwrite
+oc label managedclusters ${CLUSTER_NAME} "environment=prod" --overwrite
 ```
 
 Clone the test applicaton
