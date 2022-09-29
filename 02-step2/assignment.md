@@ -9,7 +9,6 @@ notes:
     In the next learning module, we cover enabling ACM and the following Concepts:
 
     * Create the ACM Managed Cluster instances from the ACM Hub
-    * Label this Clusters with the appropriate "Role"
     * Deploy the required import secrets and Kube config
     * Provision the Import files to the managed clusters
     * Verify the import and start managing the clusters

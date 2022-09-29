@@ -2,11 +2,11 @@
 slug: step6
 id: v2juyihs5qbn
 type: challenge
-title: Ansible Tower Integration
+title: Enable Application Ingress
 notes:
 - type: text
   contents: |-
-    In the next learning module, we cover Ansible Tower Integration with ACM and the following Concepts:
+    In the next learning module, we cover Application Ingress with ACM and the following Concepts:
 
     * xx
     * xx

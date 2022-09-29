@@ -30,8 +30,30 @@ tabs:
 difficulty: basic
 timelimit: 600
 ---
-Connect to OpenShift again:
+Connect to ACM Hub:
 
 ```
 oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
 ```
+
+### Prerequisites
+
+Some of the policies presented in the repository apply on the mariadb application. In order to deploy the application, run the next command on the hub cluster.
+
+```
+oc apply -f content/application.yml
+```
+
+The policies in this repository are deployed in the rhacm-policies namespace. Deploying the namespace can be done by running the next command on the hub cluster.
+
+```
+oc apply -f content/namespace.yml
+```
+
+The policies in this repository are using a PlacementRule resource that maps policies to managed clusters with the 'prod' tag assigned to them. In order to deploy the PlacementRule resource, run the next command on the hub cluster.
+
+```
+oc apply -f content/placementrule.yml
+```
+
+##

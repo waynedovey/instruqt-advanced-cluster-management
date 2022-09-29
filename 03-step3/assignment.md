@@ -8,11 +8,10 @@ notes:
   contents: |-
     In the next learning module, we cover Application management with ACM and the following Concepts:
 
-    * xx
-    * xx
-    * xx
-    * xx
-    * xx
+    * Label the Managed Clusters with the appropriate "Role"
+    * Clone an example application (GitOps)
+    * Deploy the example applicaton
+    * Review the application has been deployed using the ACM GitOps Controller
 
     Let's begin!
 tabs:
@@ -43,7 +42,7 @@ tabs:
   path: /
   port: 30001
   new_window: true
-difficulty: advanced
+difficulty: basic
 timelimit: 600
 ---
 Connect to ACM Hub:

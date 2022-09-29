@@ -2,17 +2,17 @@
 slug: step4
 id: kiyiwsdbpyod
 type: challenge
-title: Governance, Risk and Compliance
+title: Cluster Governance
 notes:
 - type: text
   contents: |-
     In the next learning module, we cover basic cluster governance with ACM and the following Concepts:
 
-    * xx
-    * xx
-    * xx
-    * xx
-    * xx
+    * Explore Governance option for multiple clusters
+    * Download and deploy multiple policies
+    * Modify and understand the policy structure and features
+    * Apply these policies to the ACM Hub
+    * Review the managed cluster for the results
 
     Let's begin!
 tabs:
@@ -34,11 +34,6 @@ tabs:
 difficulty: advanced
 timelimit: 600
 ---
-Connect to ACM Hub:
-```
-oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
-```
-
 Download the first policy for namespace Creation
 
 ```
@@ -47,7 +42,7 @@ curl -s https://raw.githubusercontent.com/stolostron/policy-collection/main/stab
 
 Modify the Policy policy-namespace.yaml in the "Visual Editor".
 
-Change the remediationAction to enforce and environment to "prod"
+Change the "***remediationAction***" to enforce
 ```
 spec:
   remediationAction: enforce
@@ -69,6 +64,8 @@ spec:
                 metadata:
                   name: prod
 ```
+
+and environment to "***prod***"
 ```
 ---
 apiVersion: apps.open-cluster-management.io/v1
@@ -84,7 +81,14 @@ spec:
       - {key: environment, operator: In, values: ["prod"]}
 ```
 
-Review the Policy and save
+Review and Ensure the saved icon is clicked once edited as shown here
+
+![perspective-toggle](../assets/savework.png)
+
+Connect to ACM Hub again:
+```
+oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
+```
 
 Apply the Policy in the default namespace
 ```
@@ -117,14 +121,14 @@ Display the newly created namespace
 kubectl get namespaces
 ```
 
-Next Download the second policy
+# Next Download the second policy
 
 ```
 curl -s https://raw.githubusercontent.com/stolostron/policy-collection/main/stable/CM-Configuration-Management/policy-pod.yaml -o policy-pod.yaml
 ```
-Modify the Policy **policy-pod.yaml** in the "Visual Editor".
+Modify the Policy ***policy-pod.yaml*** in the "Visual Editor".
 
-Add the new "namespace" value created in the previous step
+Add the new "***namespace: prod***" value created in the previous step
 
 ```
           object-templates:
@@ -143,7 +147,7 @@ Add the new "namespace" value created in the previous step
                     - containerPort: 80
 ```
 
-Next, change the Placement rule again to allow this to propagate to the Prod Clusters as before
+Next, change the Placement rule again to "***prod***" to allow this to propagate to the Prod Clusters as before
 
 ```
 ---
@@ -160,7 +164,7 @@ spec:
       - {key: environment, operator: In, values: ["prod"]}
 ```
 
-Finally update the remediationAction to enfore.
+Finally update the "***remediationAction***" to enfore.
 ```
   remediationAction: enforce
   disabled: false
@@ -190,6 +194,9 @@ Finally update the remediationAction to enfore.
                     ports:
                     - containerPort: 80
 ```
+Review and Ensure the saved icon is clicked once edited as shown here
+
+![perspective-toggle](../assets/savework.png)
 
 Connect to ACM Hub:
 ```
