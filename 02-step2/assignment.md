@@ -3,6 +3,18 @@ slug: step2
 id: ftiwbxv0fmlr
 type: challenge
 title: Cluster Management
+notes:
+- type: text
+  contents: |-
+    In the next learning module, we cover enabling ACM and the following Concepts:
+
+    * Create the ACM Managed Cluster instances from the ACM Hub
+    * Label this Clusters with the appropriate "Role"
+    * Deploy the required import secrets and Kube config
+    * Provision the Import files to the managed clusters
+    * Verify the import and start managing the clusters
+
+    Let's begin!
 tabs:
 - title: Work Terminal 1
   type: terminal
@@ -20,7 +32,7 @@ tabs:
   url: https://console-openshift-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
 difficulty: advanced
-timelimit: 8000
+timelimit: 600
 ---
 Connect to ACM Hub:
 
@@ -194,7 +206,7 @@ After about 1 min...
 Spoke1 and Spoke2 should be registered
 
 ```
-  JOINED=TRUE
+  JOINED=True
 ```
 
 Cleanup a few things

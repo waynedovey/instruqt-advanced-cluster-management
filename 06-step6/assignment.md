@@ -3,6 +3,18 @@ slug: step6
 id: v2juyihs5qbn
 type: challenge
 title: Ansible Tower Integration
+notes:
+- type: text
+  contents: |-
+    In the next learning module, we cover Ansible Tower Integration with ACM and the following Concepts:
+
+    * xx
+    * xx
+    * xx
+    * xx
+    * xx
+
+    Let's begin!
 tabs:
 - title: Terminal 1
   type: terminal
@@ -15,8 +27,8 @@ tabs:
   type: website
   url: https://console-openshift-console.apps.spoke.${_SANDBOX_ID}.instruqt.io
   new_window: true
-difficulty: basic
-timelimit: 200
+difficulty: advanced
+timelimit: 1200
 ---
 Connect to OpenShift again:
 

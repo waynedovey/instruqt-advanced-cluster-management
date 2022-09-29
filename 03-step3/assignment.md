@@ -3,6 +3,18 @@ slug: step3
 id: nwdlnze5iicz
 type: challenge
 title: Application Lifecycle
+notes:
+- type: text
+  contents: |-
+    In the next learning module, we cover Application management with ACM and the following Concepts:
+
+    * xx
+    * xx
+    * xx
+    * xx
+    * xx
+
+    Let's begin!
 tabs:
 - title: Terminal 1
   type: terminal
