@@ -23,9 +23,9 @@ tabs:
   type: code
   hostname: container
   path: /root
-- title: Web Console
+- title: ACM Hub Console
   type: website
-  url: https://console-openshift-console.apps.spoke.${_SANDBOX_ID}.instruqt.io
+  url: https://multicloud-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
 difficulty: advanced
 timelimit: 1200

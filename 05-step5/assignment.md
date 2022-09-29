@@ -23,9 +23,9 @@ tabs:
   type: code
   hostname: container
   path: /root
-- title: Web Console
+- title: ACM Hub Console
   type: website
-  url: https://console-openshift-console.apps.spoke.${_SANDBOX_ID}.instruqt.io
+  url: https://multicloud-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
 difficulty: basic
 timelimit: 600
@@ -41,19 +41,28 @@ oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-veri
 Some of the policies presented in the repository apply on the mariadb application. In order to deploy the application, run the next command on the hub cluster.
 
 ```
-oc apply -f content/application.yml
+curl -s https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/05-step5/content/application.yml -o application.yml
+```
+```
+oc apply -f application.yml
 ```
 
 The policies in this repository are deployed in the rhacm-policies namespace. Deploying the namespace can be done by running the next command on the hub cluster.
 
 ```
-oc apply -f content/namespace.yml
+curl -s https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/05-step5/content/namespace.yml -o namespace.yml
+```
+```
+oc apply -f namespace.yml
 ```
 
 The policies in this repository are using a PlacementRule resource that maps policies to managed clusters with the 'prod' tag assigned to them. In order to deploy the PlacementRule resource, run the next command on the hub cluster.
 
 ```
-oc apply -f content/placementrule.yml
+curl -s https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/05-step5/content/placementrule.yml -o placementrule.yml
+```
+```
+oc apply -f placementrule.yml
 ```
 
 ##
