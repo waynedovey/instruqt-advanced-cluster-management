@@ -4,61 +4,65 @@ metadata:
   name: policy-limitrange
   namespace: rhacm-policies
   annotations:
-    policy.open-cluster-management.io/standards: NIST SP 800-53
     policy.open-cluster-management.io/categories: SC System and Communications Protection
+    policy.open-cluster-management.io/standards: NIST SP 800-53
     policy.open-cluster-management.io/controls: SC-6 Resource Availability
 spec:
-  remediationAction: enforce
   disabled: false
+  remediationAction: enforce
   policy-templates:
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-limitrange-example
+          name: policy-limitrange
         spec:
-          remediationAction: enforce # the policy-template spec.remediationAction is overridden by the preceding parameter value for spec.remediationAction.
+          remediationAction: enforce
           severity: medium
           namespaceSelector:
-            include: ["mariadb"]
+            exclude:
+              - kube-*
+            include:
+              - mariadb
           object-templates:
-            - complianceType: musthave
+            - complianceType: mustonlyhave
               objectDefinition:
                 apiVersion: v1
-                kind: LimitRange # limit memory usage
+                kind: LimitRange
                 metadata:
-                  name: mariadb-limit-range
+                  name: mem-limit-range
                 spec:
                   limits:
-                  - default:
-                      memory: 512Mi
-                      cpu: 500m
-                    defaultRequest:
-                      memory: 256Mi
-                      cpu: 50m
-                    type: Container
----
-apiVersion: policy.open-cluster-management.io/v1
-kind: PlacementBinding
-metadata:
-  name: binding-policy-limitrange
-placementRef:
-  name: placement-policy-limitrange
-  kind: PlacementRule
-  apiGroup: apps.open-cluster-management.io
-subjects:
-- name: policy-limitrange
-  kind: Policy
-  apiGroup: policy.open-cluster-management.io
+                    - default:
+                        memory: 512Mi
+                      defaultRequest:
+                        memory: 256Mi
+                      type: Container
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-limitrange
+  name: policy-limitrange-placement
+  namespace: rhacm-policies
 spec:
-  clusterConditions:
-  - status: "True"
-    type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
-      - {key: environment, operator: In, values: ["prod"]}
+      - key: environment
+        operator: In
+        values:
+          - prod
+  clusterConditions: []
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: policy-limitrange-placement
+  namespace: rhacm-policies
+placementRef:
+  name: policy-limitrange-placement
+  apiGroup: apps.open-cluster-management.io
+  kind: PlacementRule
+subjects:
+  - name: policy-limitrange
+    apiGroup: policy.open-cluster-management.io
+    kind: Policy
