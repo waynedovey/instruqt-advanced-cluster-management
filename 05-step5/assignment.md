@@ -137,7 +137,7 @@ Connect to ACM Hub:
 oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
 ```
 
-Apply the Policy Deny all NetworkPolicy 
+Apply the Policy Deny all NetworkPolicy
 ```
 oc apply -f networkpolicy-denyall-policy.yml
 ```

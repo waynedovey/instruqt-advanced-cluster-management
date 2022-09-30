@@ -30,7 +30,17 @@ spec:
                   name: deny-by-default
                 spec:
                   podSelector:
-                  ingress: []
+                    matchLabels:
+                      color: blue
+                  ingress:
+                  - from:
+                    - podSelector:
+                        matchLabels:
+                          color: red
+                    ports:
+                      - port: 3306                
+#                  podSelector:
+#                  ingress: []
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
