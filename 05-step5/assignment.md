@@ -104,3 +104,23 @@ Display the newly pods in the prod namespace
 ```
 kubectl describe LimitRange -n mariadb
 ```
+
+# Secure the Namespace 
+
+Create a pod on the managed clusters to test connectivity
+```
+curl -s https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/05-step5/content/busybox.yml -o busybox.yml 
+```
+
+```
+export CLUSTER_NAME=spoke1
+```
+```
+oc login --token=superSecur3T0ken --server=http://${CLUSTER_NAME}:8001
+```
+```
+kubectl create -f busybox.yml
+```
+```
+kubectl exec -it busybox -- curl mariadb:3306
+```
