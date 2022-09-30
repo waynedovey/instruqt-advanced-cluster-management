@@ -23,6 +23,12 @@ tabs:
   type: code
   hostname: container
   path: /root
+- title: Spoke1 Web
+  type: service
+  hostname: spoke1
+  path: /
+  port: 32582
+  new_window: true
 - title: ACM Hub Console
   type: website
   url: https://multicloud-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
