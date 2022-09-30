@@ -121,6 +121,23 @@ oc login --token=superSecur3T0ken --server=http://${CLUSTER_NAME}:8001
 ```
 kubectl create -f busybox.yml
 ```
+
+## Connect to the mysql port to indicate an issue
 ```
-kubectl exec -it busybox -- curl mariadb:3306
+kubectl exec -it busybox -- telnet mariadb.mariadb.svc.cluster.local:3306
+```
+
+```
+curl -s https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/05-step5/content/networkpolicy-denyall-policy.yml -o networkpolicy-denyall-policy.yml
+```
+
+Connect to ACM Hub:
+
+```
+oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
+```
+
+Apply the Policy Deny all NetworkPolicy 
+```
+oc apply -f networkpolicy-denyall-policy.yml
 ```

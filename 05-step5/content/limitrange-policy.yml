@@ -39,20 +39,6 @@ spec:
                         memory: 256Mi
                       type: Container
 ---
-apiVersion: apps.open-cluster-management.io/v1
-kind: PlacementRule
-metadata:
-  name: policy-limitrange-placement
-  namespace: rhacm-policies
-spec:
-  clusterSelector:
-    matchExpressions:
-      - key: environment
-        operator: In
-        values:
-          - prod
-  clusterConditions: []
----
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
@@ -66,3 +52,18 @@ subjects:
   - name: policy-limitrange
     apiGroup: policy.open-cluster-management.io
     kind: Policy
+
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: policy-limitrange-placement
+  namespace: rhacm-policies
+spec:
+  clusterSelector:
+    matchExpressions:
+      - key: environment
+        operator: In
+        values:
+          - prod
+  clusterConditions: []

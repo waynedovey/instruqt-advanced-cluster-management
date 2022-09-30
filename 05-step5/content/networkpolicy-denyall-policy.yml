@@ -35,25 +35,27 @@ spec:
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-policy-networkpolicy-denyall-mariadb
+  name: policy-networkpolicy-denyall-mariadb-placement
   namespace: rhacm-policies
 placementRef:
-  name: prod-clusters
-  kind: PlacementRule
+  name: policy-networkpolicy-denyall-mariadb-placement
   apiGroup: apps.open-cluster-management.io
+  kind: PlacementRule
 subjects:
-- name: policy-networkpolicy-denyall-mariadb
-  kind: Policy
-  apiGroup: policy.open-cluster-management.io
+  - name: policy-networkpolicy-denyall-mariadb
+    apiGroup: policy.open-cluster-management.io
+    kind: Policy
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-networkpolicy-denyall-mariadb
+  name: policy-networkpolicy-denyall-mariadb-placement
+  namespace: rhacm-policies
 spec:
-  clusterConditions:
-  - status: "True"
-    type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
-      - {key: environment, operator: In, values: ["prod"]}
+      - key: environment
+        operator: In
+        values:
+          - prod
+  clusterConditions: []
