@@ -65,4 +65,42 @@ curl -s https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-m
 oc apply -f placementrule.yml
 ```
 
-##
+In this section we will start enforcing a range of Policies. This is to ensure we have a locked down namespace.
+These can be namespace or clusterwide:
+
+# Firstly we implement LimitRange:
+
+```
+curl -s https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/05-step5/content/limitrange-policy.yml -o limitrange-policy.yml
+```
+```
+oc apply -f limitrange-policy.yml
+```
+
+Display the newly pods in the prod namespace on spoke1
+
+```
+export CLUSTER_NAME=spoke1
+```
+```
+oc login --token=superSecur3T0ken --server=http://${CLUSTER_NAME}:8001
+```
+
+Display the newly pods in the prod namespace
+```
+kubectl describe LimitRange -n mariadb
+```
+
+Display the newly pods in the prod namespace on spoke2
+
+```
+export CLUSTER_NAME=spoke2
+```
+```
+oc login --token=superSecur3T0ken --server=http://${CLUSTER_NAME}:8001
+```
+
+Display the newly pods in the prod namespace
+```
+kubectl describe LimitRange -n mariadb
+```
