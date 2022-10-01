@@ -8,11 +8,10 @@ notes:
   contents: |-
     In the next learning module, we cover Advanced Policy Management with ACM and the following Concepts:
 
-    * xx
-    * xx
-    * xx
-    * xx
-    * xx
+    * Create an example MySQL Application using GitOps and ACM
+    * Ensure there is a matching Prod PlacementRule
+    * Implement a custom LimitRange to ensure namespace Limits
+    * Review both managed Clusters
 
     Let's begin!
 tabs:

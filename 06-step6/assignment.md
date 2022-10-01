@@ -6,13 +6,13 @@ title: Enable Application Ingress
 notes:
 - type: text
   contents: |-
-    In the next learning module, we cover Application Ingress with ACM and the following Concepts:
+    In the last learning module, we cover Application Ingress with ACM and the following Concepts:
 
-    * xx
-    * xx
-    * xx
-    * xx
-    * xx
+    * Create an example MySQL Application using GitOps and ACM
+    * Ensure there is a matching Prod PlacementRule
+    * Enable Cluster Ingress
+    * Review both managed Clusters
+    * Finally, test the Ingress for both Wordpress sites on both Clusters
 
     Let's begin!
 tabs:
@@ -107,4 +107,10 @@ Display the new pods in the wordpress namespace
 oc get pods -n wordpress
 ```
 
-Completed, move onto the next assignment.
+Success, Review the working Wordpress site with MySQL backend.
+
+Review Tab Spoke1 Wordpress and Spoke2 Wordpress
+
+![perspective-toggle](../assets/wordpress.png)
+
+Congrats! You have completed the Assignments.
