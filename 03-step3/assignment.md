@@ -43,7 +43,7 @@ tabs:
   port: 30001
   new_window: true
 difficulty: basic
-timelimit: 600
+timelimit: 6000
 ---
 Connect to ACM Hub:
 

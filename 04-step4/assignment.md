@@ -32,7 +32,7 @@ tabs:
   url: https://console-openshift-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
 difficulty: advanced
-timelimit: 600
+timelimit: 6000
 ---
 Download the first policy for namespace Creation
 

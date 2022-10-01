@@ -34,7 +34,7 @@ tabs:
   url: https://multicloud-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
 difficulty: basic
-timelimit: 600
+timelimit: 6000
 ---
 Connect to ACM Hub:
 
@@ -111,3 +111,4 @@ Display the newly pods in the prod namespace
 kubectl describe LimitRange -n mysql
 ```
 
+Completed, move onto the next assignment.

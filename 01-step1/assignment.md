@@ -27,7 +27,7 @@ tabs:
   url: https://console-openshift-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
   new_window: true
 difficulty: advanced
-timelimit: 1200
+timelimit: 6000
 ---
 Let's begin by connecting to OpenShift:
 
