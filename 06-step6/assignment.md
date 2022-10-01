@@ -23,6 +23,16 @@ tabs:
   type: code
   hostname: container
   path: /root
+- title: Spoke1 Wordpress
+  type: service
+  hostname: spoke1
+  path: /
+  port: 31500
+- title: Spoke2 Wordpress
+  type: service
+  hostname: spoke2
+  path: /
+  port: 31500
 - title: ACM Hub Console
   type: website
   url: https://multicloud-console.crc-dzk9v-master-0.crc.${_SANDBOX_ID}.instruqt.io
@@ -78,8 +88,9 @@ export CLUSTER_NAME=spoke1
 oc login --token=superSecur3T0ken --server=http://${CLUSTER_NAME}:8001
 ```
 
-Display the newly pods in the prod namespace
+Display the new pods in the wordpress namespace
 ```
+oc get pods -n wordpress
 ```
 
 Display
@@ -91,8 +102,9 @@ export CLUSTER_NAME=spoke2
 oc login --token=superSecur3T0ken --server=http://${CLUSTER_NAME}:8001
 ```
 
-Display
+Display the new pods in the wordpress namespace
 ```
+oc get pods -n wordpress
 ```
 
 Completed, move onto the next assignment.
