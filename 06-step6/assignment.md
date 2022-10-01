@@ -8,7 +8,7 @@ notes:
   contents: |-
     In the last learning module, we cover Application Ingress with ACM and the following Concepts:
 
-    * Create an example MySQL Application using GitOps and ACM
+    * Create an example Wordpress Application using GitOps and ACM
     * Ensure there is a matching Prod PlacementRule
     * Enable Cluster Ingress
     * Review both managed Clusters
