@@ -18,6 +18,9 @@ tabs:
 - title: Work Terminal 1
   type: terminal
   hostname: container
+- title: CRC Terminal 2
+  type: terminal
+  hostname: crc
 - title: Visual Editor
   type: code
   hostname: container
