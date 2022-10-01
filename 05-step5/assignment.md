@@ -94,7 +94,7 @@ oc login --token=superSecur3T0ken --server=http://${CLUSTER_NAME}:8001
 
 Display the newly pods in the prod namespace
 ```
-kubectl describe LimitRange -n mariadb
+kubectl describe LimitRange -n mysql
 ```
 
 Display the newly pods in the prod namespace on spoke2
@@ -108,42 +108,6 @@ oc login --token=superSecur3T0ken --server=http://${CLUSTER_NAME}:8001
 
 Display the newly pods in the prod namespace
 ```
-kubectl describe LimitRange -n mariadb
+kubectl describe LimitRange -n mysql
 ```
 
-# Secure the Namespace
-
-Create a pod on the managed clusters to test connectivity
-```
-curl -s https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/05-step5/content/busybox.yml -o busybox.yml
-```
-
-```
-export CLUSTER_NAME=spoke1
-```
-```
-oc login --token=superSecur3T0ken --server=http://${CLUSTER_NAME}:8001
-```
-```
-kubectl create -f busybox.yml
-```
-
-## Connect to the mysql port to indicate an issue
-```
-kubectl exec -it busybox -- telnet mariadb.mariadb.svc.cluster.local:3306
-```
-
-```
-curl -s https://raw.githubusercontent.com/waynedovey/instruqt-advanced-cluster-management/main/05-step5/content/networkpolicy-denyall-policy.yml -o networkpolicy-denyall-policy.yml
-```
-
-Connect to ACM Hub:
-
-```
-oc login -u admin -p admin https://api.crc.testing:6443 --insecure-skip-tls-verify=true
-```
-
-Apply the Policy Deny all NetworkPolicy
-```
-oc apply -f networkpolicy-denyall-policy.yml
-```
