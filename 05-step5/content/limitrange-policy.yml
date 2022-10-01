@@ -23,7 +23,7 @@ spec:
             exclude:
               - kube-*
             include:
-              - mariadb
+              - mysql
           object-templates:
             - complianceType: mustonlyhave
               objectDefinition:

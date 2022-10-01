@@ -27,7 +27,7 @@ tabs:
   type: service
   hostname: spoke1
   path: /
-  port: 32582
+  port: 31476
   new_window: true
 - title: ACM Hub Console
   type: website

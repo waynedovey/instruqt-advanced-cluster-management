@@ -40,6 +40,10 @@ Download the first policy for namespace Creation
 curl -s https://raw.githubusercontent.com/stolostron/policy-collection/main/stable/CM-Configuration-Management/policy-namespace.yaml -o policy-namespace.yaml
 ```
 
+The **PlacementRule** are required to deploy Applications on target Clusters as seen below:
+
+![perspective-toggle](../assets/clusterplacement.png)
+
 Modify the Policy policy-namespace.yaml in the "Visual Editor".
 
 Change the "***remediationAction***" to enforce
